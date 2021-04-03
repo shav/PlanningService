@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.API", "Planning\API\MicroSungero.Planning.API\MicroSungero.Planning.API.csproj", "{E74DF8FD-75E9-4B2B-87ED-5E932B185659}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Planning", "Planning", "{F5089311-3B4E-4ED4-989C-5F9023600530}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{7E6CE884-316A-48AC-9DCC-9D0CDC11FBA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{75F4458F-514D-409C-8627-748AEF719FA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B74230B2-21B9-4A13-BC8D-5C6A5426BA91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module", "Module", "{8BB28E76-350D-466B-9B4A-D1FE78026FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain", "Planning\Domain\MicroSungero.Planning.Domain\MicroSungero.Planning.Domain.csproj", "{281438DB-B949-489D-B90E-719F8C08D878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain.Abstractions", "Planning\Domain\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj", "{38C1719B-D034-4C5E-86E3-3BEDE84AE12C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Module", "Planning\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj", "{46CF7253-AC2E-4F76-8341-0BE74CA555FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data", "Planning\Data\MicroSungero.Planning.Data\MicroSungero.Planning.Data.csproj", "{F3B3546E-DB13-4D53-8CEC-3DBE390669C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data.EntityFramework", "Planning\Data\MicroSungero.Planning.Data.EntityFramework\MicroSungero.Planning.Data.EntityFramework.csproj", "{7EC41699-5C2D-4183-A13E-5A4A4C634D90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E74DF8FD-75E9-4B2B-87ED-5E932B185659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E74DF8FD-75E9-4B2B-87ED-5E932B185659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E74DF8FD-75E9-4B2B-87ED-5E932B185659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E74DF8FD-75E9-4B2B-87ED-5E932B185659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281438DB-B949-489D-B90E-719F8C08D878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281438DB-B949-489D-B90E-719F8C08D878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281438DB-B949-489D-B90E-719F8C08D878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281438DB-B949-489D-B90E-719F8C08D878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C1719B-D034-4C5E-86E3-3BEDE84AE12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C1719B-D034-4C5E-86E3-3BEDE84AE12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C1719B-D034-4C5E-86E3-3BEDE84AE12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C1719B-D034-4C5E-86E3-3BEDE84AE12C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46CF7253-AC2E-4F76-8341-0BE74CA555FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CF7253-AC2E-4F76-8341-0BE74CA555FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CF7253-AC2E-4F76-8341-0BE74CA555FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CF7253-AC2E-4F76-8341-0BE74CA555FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B3546E-DB13-4D53-8CEC-3DBE390669C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B3546E-DB13-4D53-8CEC-3DBE390669C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B3546E-DB13-4D53-8CEC-3DBE390669C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B3546E-DB13-4D53-8CEC-3DBE390669C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC41699-5C2D-4183-A13E-5A4A4C634D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC41699-5C2D-4183-A13E-5A4A4C634D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC41699-5C2D-4183-A13E-5A4A4C634D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC41699-5C2D-4183-A13E-5A4A4C634D90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E74DF8FD-75E9-4B2B-87ED-5E932B185659} = {7E6CE884-316A-48AC-9DCC-9D0CDC11FBA2}
+		{7E6CE884-316A-48AC-9DCC-9D0CDC11FBA2} = {F5089311-3B4E-4ED4-989C-5F9023600530}
+		{75F4458F-514D-409C-8627-748AEF719FA2} = {F5089311-3B4E-4ED4-989C-5F9023600530}
+		{B74230B2-21B9-4A13-BC8D-5C6A5426BA91} = {F5089311-3B4E-4ED4-989C-5F9023600530}
+		{8BB28E76-350D-466B-9B4A-D1FE78026FEA} = {F5089311-3B4E-4ED4-989C-5F9023600530}
+		{281438DB-B949-489D-B90E-719F8C08D878} = {75F4458F-514D-409C-8627-748AEF719FA2}
+		{38C1719B-D034-4C5E-86E3-3BEDE84AE12C} = {75F4458F-514D-409C-8627-748AEF719FA2}
+		{46CF7253-AC2E-4F76-8341-0BE74CA555FF} = {8BB28E76-350D-466B-9B4A-D1FE78026FEA}
+		{F3B3546E-DB13-4D53-8CEC-3DBE390669C6} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
+		{7EC41699-5C2D-4183-A13E-5A4A4C634D90} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0232C3D6-6970-46DB-81EC-04FB02BA28CF}
+	EndGlobalSection
+EndGlobal
