@@ -12,4 +12,10 @@
     <OutputPath>..\..\bin\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="MicroSungero.Kernel.Module">
+      <HintPath>..\..\lib\MicroSungero.Kernel.Module.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
