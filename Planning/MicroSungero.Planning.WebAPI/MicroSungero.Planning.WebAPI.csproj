@@ -5,8 +5,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MicroSungero.Data.Abstractions">
+      <HintPath>..\lib\MicroSungero.Data.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Data.EntityFramework">
+      <HintPath>..\lib\MicroSungero.Data.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="MicroSungero.Kernel.API">
       <HintPath>..\lib\MicroSungero.Kernel.API.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
+      <HintPath>..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.WebAPI">
+      <HintPath>..\lib\MicroSungero.WebAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
 
