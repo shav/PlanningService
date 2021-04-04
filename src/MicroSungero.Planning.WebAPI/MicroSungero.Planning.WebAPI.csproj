@@ -17,19 +17,19 @@
 
   <ItemGroup>
     <Reference Include="MicroSungero.Data.Abstractions">
-      <HintPath>..\lib\MicroSungero.Data.Abstractions.dll</HintPath>
+      <HintPath>..\..\lib\MicroSungero.Data.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.Data.EntityFramework">
-      <HintPath>..\lib\MicroSungero.Data.EntityFramework.dll</HintPath>
+      <HintPath>..\..\lib\MicroSungero.Data.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.Kernel.API">
-      <HintPath>..\lib\MicroSungero.Kernel.API.dll</HintPath>
+      <HintPath>..\..\lib\MicroSungero.Kernel.API.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
-      <HintPath>..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
+      <HintPath>..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.WebAPI">
-      <HintPath>..\lib\MicroSungero.WebAPI.dll</HintPath>
+      <HintPath>..\..\lib\MicroSungero.WebAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
 

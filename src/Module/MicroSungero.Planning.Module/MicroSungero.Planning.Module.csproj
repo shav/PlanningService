@@ -5,16 +5,16 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\bin\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\bin\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="MicroSungero.Kernel.Module">
-      <HintPath>..\..\lib\MicroSungero.Kernel.Module.dll</HintPath>
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Module.dll</HintPath>
     </Reference>
   </ItemGroup>
 
