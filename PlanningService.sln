@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data.EntityFramework", "Planning\Data\MicroSungero.Planning.Data.EntityFramework\MicroSungero.Planning.Data.EntityFramework.csproj", "{7EC41699-5C2D-4183-A13E-5A4A4C634D90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.WebAPI", "Planning\MicroSungero.Planning.WebAPI\MicroSungero.Planning.WebAPI.csproj", "{FA80A260-F05C-4720-A187-AEA70CE4AA36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{7EC41699-5C2D-4183-A13E-5A4A4C634D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EC41699-5C2D-4183-A13E-5A4A4C634D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EC41699-5C2D-4183-A13E-5A4A4C634D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA80A260-F05C-4720-A187-AEA70CE4AA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA80A260-F05C-4720-A187-AEA70CE4AA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA80A260-F05C-4720-A187-AEA70CE4AA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA80A260-F05C-4720-A187-AEA70CE4AA36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{46CF7253-AC2E-4F76-8341-0BE74CA555FF} = {8BB28E76-350D-466B-9B4A-D1FE78026FEA}
 		{F3B3546E-DB13-4D53-8CEC-3DBE390669C6} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
 		{7EC41699-5C2D-4183-A13E-5A4A4C634D90} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
+		{FA80A260-F05C-4720-A187-AEA70CE4AA36} = {F5089311-3B4E-4ED4-989C-5F9023600530}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0232C3D6-6970-46DB-81EC-04FB02BA28CF}
