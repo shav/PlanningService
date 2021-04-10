@@ -12,21 +12,50 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="FluentValidation" Version="9.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.4.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="MicroSungero.Data.Abstractions">
-      <HintPath>..\..\lib\MicroSungero.Data.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="MicroSungero.Data.EntityFramework">
-      <HintPath>..\..\lib\MicroSungero.Data.EntityFramework.dll</HintPath>
+    <Reference Include="MicroSungero.Common.Utils">
+      <HintPath>..\..\lib\MicroSungero.Common.Utils.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.Kernel.API">
       <HintPath>..\..\lib\MicroSungero.Kernel.API.dll</HintPath>
     </Reference>
+    <Reference Include="MicroSungero.Kernel.API.Behaviors">
+      <HintPath>..\..\lib\MicroSungero.Kernel.API.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.API.Services">
+      <HintPath>..\..\lib\MicroSungero.Kernel.API.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Data">
+      <HintPath>..\..\lib\MicroSungero.Kernel.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Data.EntityFramework">
+      <HintPath>..\..\lib\MicroSungero.Kernel.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain">
+      <HintPath>..\..\lib\MicroSungero.Kernel.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
       <HintPath>..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Entities">
+      <HintPath>..\..\lib\MicroSungero.Kernel.Domain.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Services">
+      <HintPath>..\..\lib\MicroSungero.Kernel.Domain.Services.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.WebAPI">
       <HintPath>..\..\lib\MicroSungero.WebAPI.dll</HintPath>
