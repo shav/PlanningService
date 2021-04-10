@@ -63,6 +63,6 @@ namespace MicroSungero.Planning.Domain.Entities
     /// <summary>
     /// Reference to TodoList which contains this todo item.
     /// </summary>
-    ITodoList TodoList { get; set; }
+    ITodoList TodoList { get; }
   }
 }
