@@ -32,6 +32,8 @@ namespace MicroSungero.Planning.WebAPI
       services.AddMvcCore(options => options.EnableEndpointRouting = false).AddApiExplorer();
       services.AddControllers();
       services.UseSwaggerGenerator(ServiceName);
+
+      services.UseMicroSungeroKernel();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
