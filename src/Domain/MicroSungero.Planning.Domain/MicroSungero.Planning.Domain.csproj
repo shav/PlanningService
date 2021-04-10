@@ -12,5 +12,11 @@
     <OutputPath>..\..\..\bin\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="MicroSungero.Kernel.Domain.Exceptions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Exceptions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 
 </Project>
