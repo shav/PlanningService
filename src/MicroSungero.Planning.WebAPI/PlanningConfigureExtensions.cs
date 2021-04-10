@@ -27,8 +27,7 @@ namespace MicroSungero.Planning.WebAPI
       var apiModules = new[]
       {
         AppDomain.CurrentDomain.GetAssemblyByName(Planning.Module.AssemblyNames.API),
-        AppDomain.CurrentDomain.GetAssemblyByName(Planning.Module.AssemblyNames.API.Services),
-        AppDomain.CurrentDomain.GetAssemblyByName(Planning.Module.AssemblyNames.API.Behaviors)
+        AppDomain.CurrentDomain.GetAssemblyByName(Planning.Module.AssemblyNames.API.Services)
       };
       var dataModules = new[]
       {

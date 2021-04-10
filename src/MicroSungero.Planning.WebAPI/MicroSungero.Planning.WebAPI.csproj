@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\API\MicroSungero.Planning.API.Behaviors\MicroSungero.Planning.API.Behaviors.csproj" />
     <ProjectReference Include="..\API\MicroSungero.Planning.API.Services\MicroSungero.Planning.API.Services.csproj" />
     <ProjectReference Include="..\API\MicroSungero.Planning.API\MicroSungero.Planning.API.csproj" />
     <ProjectReference Include="..\Data\MicroSungero.Planning.Data.Abstractions\MicroSungero.Planning.Data.Abstractions.csproj" />

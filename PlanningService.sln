@@ -27,15 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Data.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.WebAPI", "src\MicroSungero.Planning.WebAPI\MicroSungero.Planning.WebAPI.csproj", "{FA80A260-F05C-4720-A187-AEA70CE4AA36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain.Entities", "src\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj", "{4E7B7558-8D05-404E-8CAF-61FECD6352B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Domain.Entities", "src\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj", "{4E7B7558-8D05-404E-8CAF-61FECD6352B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain.Services", "src\Domain\MicroSungero.Planning.Domain.Services\MicroSungero.Planning.Domain.Services.csproj", "{69A51F39-04A7-4A4B-B742-705139234A2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Domain.Services", "src\Domain\MicroSungero.Planning.Domain.Services\MicroSungero.Planning.Domain.Services.csproj", "{69A51F39-04A7-4A4B-B742-705139234A2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.API.Services", "src\API\MicroSungero.Planning.API.Services\MicroSungero.Planning.API.Services.csproj", "{9CAEC503-BE48-4770-92A8-605129A3C833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.API.Services", "src\API\MicroSungero.Planning.API.Services\MicroSungero.Planning.API.Services.csproj", "{9CAEC503-BE48-4770-92A8-605129A3C833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.API.Behaviors", "src\API\MicroSungero.Planning.API.Behaviors\MicroSungero.Planning.API.Behaviors.csproj", "{02AFA816-31D1-4F73-B8EB-1E598259818E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data.Abstractions", "src\Data\MicroSungero.Planning.Data.Abstractions\MicroSungero.Planning.Data.Abstractions.csproj", "{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Data.Abstractions", "src\Data\MicroSungero.Planning.Data.Abstractions\MicroSungero.Planning.Data.Abstractions.csproj", "{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +81,6 @@ Global
 		{9CAEC503-BE48-4770-92A8-605129A3C833}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CAEC503-BE48-4770-92A8-605129A3C833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CAEC503-BE48-4770-92A8-605129A3C833}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -110,7 +104,6 @@ Global
 		{4E7B7558-8D05-404E-8CAF-61FECD6352B6} = {75F4458F-514D-409C-8627-748AEF719FA2}
 		{69A51F39-04A7-4A4B-B742-705139234A2B} = {75F4458F-514D-409C-8627-748AEF719FA2}
 		{9CAEC503-BE48-4770-92A8-605129A3C833} = {7E6CE884-316A-48AC-9DCC-9D0CDC11FBA2}
-		{02AFA816-31D1-4F73-B8EB-1E598259818E} = {7E6CE884-316A-48AC-9DCC-9D0CDC11FBA2}
 		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
