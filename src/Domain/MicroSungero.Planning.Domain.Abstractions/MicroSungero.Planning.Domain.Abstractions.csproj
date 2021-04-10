@@ -12,4 +12,13 @@
     <OutputPath>..\..\..\bin\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.System.Domain.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.System.Domain.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
