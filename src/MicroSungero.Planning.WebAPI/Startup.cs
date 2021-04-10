@@ -34,6 +34,7 @@ namespace MicroSungero.Planning.WebAPI
       services.UseSwaggerGenerator(ServiceName);
 
       services.UseMicroSungeroKernel();
+      services.UsePlanningModule();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -23,6 +23,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\API\MicroSungero.Planning.API.Behaviors\MicroSungero.Planning.API.Behaviors.csproj" />
+    <ProjectReference Include="..\API\MicroSungero.Planning.API.Services\MicroSungero.Planning.API.Services.csproj" />
+    <ProjectReference Include="..\API\MicroSungero.Planning.API\MicroSungero.Planning.API.csproj" />
+    <ProjectReference Include="..\Data\MicroSungero.Planning.Data.Abstractions\MicroSungero.Planning.Data.Abstractions.csproj" />
+    <ProjectReference Include="..\Data\MicroSungero.Planning.Data.EntityFramework\MicroSungero.Planning.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\Data\MicroSungero.Planning.Data\MicroSungero.Planning.Data.csproj" />
+    <ProjectReference Include="..\Domain\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Domain\MicroSungero.Planning.Domain.Services\MicroSungero.Planning.Domain.Services.csproj" />
+    <ProjectReference Include="..\Domain\MicroSungero.Planning.Domain\MicroSungero.Planning.Domain.csproj" />
     <ProjectReference Include="..\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj" />
   </ItemGroup>
 
@@ -56,6 +66,9 @@
     </Reference>
     <Reference Include="MicroSungero.Kernel.Domain.Services">
       <HintPath>..\..\lib\MicroSungero.Kernel.Domain.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Module">
+      <HintPath>..\..\lib\MicroSungero.Kernel.Module.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.WebAPI">
       <HintPath>..\..\lib\MicroSungero.WebAPI.dll</HintPath>

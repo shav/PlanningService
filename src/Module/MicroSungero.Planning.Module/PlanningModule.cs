@@ -10,7 +10,7 @@ namespace MicroSungero.Planning
     /// <summary>
     /// Module name.
     /// </summary>
-    public const string Name = "Planning";
+    public const string Name = "MicroSungero.Planning";
 
     /// <summary>
     /// Module assemblies names.

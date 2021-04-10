@@ -15,17 +15,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B74230B2-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module", "Module", "{8BB28E76-350D-466B-9B4A-D1FE78026FEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain", "src\Domain\MicroSungero.Planning.Domain\MicroSungero.Planning.Domain.csproj", "{281438DB-B949-489D-B90E-719F8C08D878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Domain", "src\Domain\MicroSungero.Planning.Domain\MicroSungero.Planning.Domain.csproj", "{281438DB-B949-489D-B90E-719F8C08D878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain.Abstractions", "src\Domain\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj", "{38C1719B-D034-4C5E-86E3-3BEDE84AE12C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Domain.Abstractions", "src\Domain\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj", "{38C1719B-D034-4C5E-86E3-3BEDE84AE12C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Module", "src\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj", "{46CF7253-AC2E-4F76-8341-0BE74CA555FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Module", "src\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj", "{46CF7253-AC2E-4F76-8341-0BE74CA555FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data", "src\Data\MicroSungero.Planning.Data\MicroSungero.Planning.Data.csproj", "{F3B3546E-DB13-4D53-8CEC-3DBE390669C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Data", "src\Data\MicroSungero.Planning.Data\MicroSungero.Planning.Data.csproj", "{F3B3546E-DB13-4D53-8CEC-3DBE390669C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data.EntityFramework", "src\Data\MicroSungero.Planning.Data.EntityFramework\MicroSungero.Planning.Data.EntityFramework.csproj", "{7EC41699-5C2D-4183-A13E-5A4A4C634D90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.Data.EntityFramework", "src\Data\MicroSungero.Planning.Data.EntityFramework\MicroSungero.Planning.Data.EntityFramework.csproj", "{7EC41699-5C2D-4183-A13E-5A4A4C634D90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.WebAPI", "src\MicroSungero.Planning.WebAPI\MicroSungero.Planning.WebAPI.csproj", "{FA80A260-F05C-4720-A187-AEA70CE4AA36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroSungero.Planning.WebAPI", "src\MicroSungero.Planning.WebAPI\MicroSungero.Planning.WebAPI.csproj", "{FA80A260-F05C-4720-A187-AEA70CE4AA36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain.Entities", "src\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj", "{4E7B7558-8D05-404E-8CAF-61FECD6352B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Domain.Services", "src\Domain\MicroSungero.Planning.Domain.Services\MicroSungero.Planning.Domain.Services.csproj", "{69A51F39-04A7-4A4B-B742-705139234A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.API.Services", "src\API\MicroSungero.Planning.API.Services\MicroSungero.Planning.API.Services.csproj", "{9CAEC503-BE48-4770-92A8-605129A3C833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.API.Behaviors", "src\API\MicroSungero.Planning.API.Behaviors\MicroSungero.Planning.API.Behaviors.csproj", "{02AFA816-31D1-4F73-B8EB-1E598259818E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSungero.Planning.Data.Abstractions", "src\Data\MicroSungero.Planning.Data.Abstractions\MicroSungero.Planning.Data.Abstractions.csproj", "{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +71,26 @@ Global
 		{FA80A260-F05C-4720-A187-AEA70CE4AA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA80A260-F05C-4720-A187-AEA70CE4AA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA80A260-F05C-4720-A187-AEA70CE4AA36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7B7558-8D05-404E-8CAF-61FECD6352B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7B7558-8D05-404E-8CAF-61FECD6352B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7B7558-8D05-404E-8CAF-61FECD6352B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7B7558-8D05-404E-8CAF-61FECD6352B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A51F39-04A7-4A4B-B742-705139234A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A51F39-04A7-4A4B-B742-705139234A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A51F39-04A7-4A4B-B742-705139234A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A51F39-04A7-4A4B-B742-705139234A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CAEC503-BE48-4770-92A8-605129A3C833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CAEC503-BE48-4770-92A8-605129A3C833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CAEC503-BE48-4770-92A8-605129A3C833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CAEC503-BE48-4770-92A8-605129A3C833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AFA816-31D1-4F73-B8EB-1E598259818E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +107,11 @@ Global
 		{F3B3546E-DB13-4D53-8CEC-3DBE390669C6} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
 		{7EC41699-5C2D-4183-A13E-5A4A4C634D90} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
 		{FA80A260-F05C-4720-A187-AEA70CE4AA36} = {F5089311-3B4E-4ED4-989C-5F9023600530}
+		{4E7B7558-8D05-404E-8CAF-61FECD6352B6} = {75F4458F-514D-409C-8627-748AEF719FA2}
+		{69A51F39-04A7-4A4B-B742-705139234A2B} = {75F4458F-514D-409C-8627-748AEF719FA2}
+		{9CAEC503-BE48-4770-92A8-605129A3C833} = {7E6CE884-316A-48AC-9DCC-9D0CDC11FBA2}
+		{02AFA816-31D1-4F73-B8EB-1E598259818E} = {7E6CE884-316A-48AC-9DCC-9D0CDC11FBA2}
+		{9AF0E040-8E6D-4DB6-8B65-39F3AAB18DAD} = {B74230B2-21B9-4A13-BC8D-5C6A5426BA91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0232C3D6-6970-46DB-81EC-04FB02BA28CF}
