@@ -27,10 +27,9 @@
     <Reference Include="MicroSungero.Kernel.Domain.Entities">
       <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Entities.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="TodoList%40Todo\" />
+    <Reference Include="MicroSungero.System.Domain.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.System.Domain.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
   <ItemGroup>

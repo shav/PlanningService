@@ -7,7 +7,7 @@ namespace MicroSungero.Planning.Domain.Entities
   /// <summary>
   /// Todo list item.
   /// </summary>
-  public class Todo : Entity, ITodo, IChildEntity, IInternalChildEntity
+  public class Todo : ChildEntity, ITodo, IChildEntity, IInternalChildEntity
   {
     #region Constants
 
