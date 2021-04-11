@@ -11,5 +11,19 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\..\..\bin\</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.12" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="MicroSungero.Kernel.Data.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Data.EntityFramework">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.EntityFramework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   
 </Project>
