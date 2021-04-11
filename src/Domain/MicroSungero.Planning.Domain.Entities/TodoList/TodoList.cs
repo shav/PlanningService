@@ -22,6 +22,8 @@ namespace MicroSungero.Planning.Domain.Entities
 
     public override Guid TypeGuid => ClassTypeGuid;
 
+    public override string DisplayValue => this.Title;
+
     #endregion
 
     #region ITodoList
