@@ -13,10 +13,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <ProjectReference Include="..\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="MicroSungero.Kernel.Domain">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
       <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
     </Reference>
