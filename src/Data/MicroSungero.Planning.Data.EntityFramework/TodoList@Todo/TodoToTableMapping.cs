@@ -2,6 +2,7 @@
 using MicroSungero.Planning.Domain.Entities;
 using MicroSungero.Kernel.Data.EntityFramework;
 using System.Collections.Generic;
+using MicroSungero.Planning.Domain.Entities.Validators;
 
 namespace MicroSungero.Planning.Data.EntityFramework
 {
@@ -19,11 +20,11 @@ namespace MicroSungero.Planning.Data.EntityFramework
       base.Configure(builder);
 
       builder.Property(t => t.Title)
-        .HasMaxLength(100)
+        .HasMaxLength(TodoBaseValidator.MAX_TITLE_LENGTH)
         .IsRequired();
 
       builder.Property(t => t.Description)
-        .HasMaxLength(250);
+        .HasMaxLength(TodoBaseValidator.MAX_DESCRIPTION_LENGTH);
 
       builder.Property(t => t.CreatedDate)
        .IsRequired();
