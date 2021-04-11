@@ -24,6 +24,18 @@
     <Reference Include="MicroSungero.Kernel.Data.EntityFramework">
       <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Entities">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Entities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="TodoList%40Todo\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj" />
+    <ProjectReference Include="..\..\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj" />
   </ItemGroup>
   
 </Project>
