@@ -12,5 +12,25 @@
     <OutputPath>..\..\..\bin\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MicroSungero.Kernel.Data">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Data.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Entities">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Entities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 
 </Project>
