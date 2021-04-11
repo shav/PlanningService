@@ -1,4 +1,6 @@
-﻿using MicroSungero.Kernel.Data;
+﻿using System;
+using System.Linq.Expressions;
+using MicroSungero.Kernel.Data;
 using MicroSungero.Kernel.Domain.Entities;
 using MicroSungero.Kernel.Domain.Validation;
 
@@ -34,6 +36,17 @@ namespace MicroSungero.Planning.Domain.Entities.Validators
 
       RuleFor(t => t.CompletedDate)
         .Validate_CompletionAfterCreation(t => t.CreatedDate);
+    }
+
+    /// <summary>
+    /// Get validator for TodoList property.
+    /// </summary>
+    /// <typeparam name="TProperty">Typeof property.</typeparam>
+    /// <param name="property">Property name.</param>
+    /// <returns>Validator for property.</returns>
+    public new TodoListBaseValidator<ITodoList, TProperty> RuleFor<TProperty>(Expression<Func<ITodoList, TProperty>> property)
+    {
+      return new TodoListBaseValidator<ITodoList, TProperty>(base.RuleFor(property));
     }
   }
 }

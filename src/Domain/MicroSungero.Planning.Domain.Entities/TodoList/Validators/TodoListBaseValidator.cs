@@ -6,9 +6,9 @@ using MicroSungero.Kernel.Data;
 namespace MicroSungero.Planning.Domain.Entities.Validators
 {
   /// <summary>
-  /// Common validation rules for TodoList.
+  /// Base validator for TodoList.
   /// </summary>
-  public static class TodoListBaseValidator
+  public abstract class TodoListBaseValidator
   {
     #region Constants
 
@@ -23,67 +23,111 @@ namespace MicroSungero.Planning.Domain.Entities.Validators
     public const int MAX_DESCRIPTION_LENGTH = 250;
 
     #endregion
+  }
 
-    #region Methods
+  /// <summary>
+  /// Base validator for TodoList property.
+  /// </summary>
+  /// <typeparam name="T">Type of TodoList-like object for validation.</typeparam>
+  /// <typeparam name="TProperty">Type of TodoList-like object property for validation.</typeparam>
+  public class TodoListBaseValidator<T, TProperty> : TodoListBaseValidator
+  {
+    #region Properties and fields
 
+    /// <summary>
+    /// Validation rules for property.
+    /// </summary>
+    public IRuleBuilder<T, TProperty> Rule { get; private set; }
+
+    #endregion
+
+    #region Constructors
+
+    /// <summary>
+    /// Create base validator for TodoList property.
+    /// </summary>
+    /// <param name="rule">Validation rules for property.</param>
+    public TodoListBaseValidator(IRuleBuilder<T, TProperty> rule)
+    {
+      this.Rule = rule;
+    }
+
+    #endregion
+  }
+
+  /// <summary>
+  /// Common validation rules for TodoList.
+  /// </summary>
+  public static class TodoListBaseValidatorExtensions
+  {
     /// <summary>
     /// Add validation rule for length of TodoList title.
     /// </summary>
     /// <typeparam name="T">Type of TodoList-like object for validation.</typeparam>
-    /// <param name="rule">Validation rules collection.</param>
-    public static IRuleBuilderOptions<T, string> Validate_TitleLength<T>(this IRuleBuilder<T, string> rule)
+    /// <param name="validator">Validator for TodoList string property.</param>
+    public static TodoListBaseValidator<T, string> Validate_TitleLength<T>(this TodoListBaseValidator<T, string> validator)
     {
-      return rule
-        .NotEmpty().WithMessage($"{nameof(ITodoList.Title)} of todo is required.")
-        .MaximumLength(MAX_TITLE_LENGTH).WithMessage($"{nameof(ITodoList.Title)} of todo should not exceed {MAX_TITLE_LENGTH} characters.");
+      validator.Rule
+        .NotEmpty().WithMessage($"{nameof(TodoList.Title)} of {nameof(TodoList)} is required.")
+        .MaximumLength(TodoListBaseValidator.MAX_TITLE_LENGTH).WithMessage($"{nameof(TodoList.Title)} of {nameof(TodoList)} should not exceed {TodoListBaseValidator.MAX_TITLE_LENGTH} characters.");
+
+      return validator;
     }
 
     /// <summary>
     /// Add validation rule for TodoList title uniqueness.
     /// </summary>
     /// <typeparam name="T">Type of TodoList-like object for validation.</typeparam>
-    /// <param name="rule">Validation rules collection.</param>
+    /// <param name="validator">Validator for TodoList string property.</param>
     /// <param name="todoListId">Getter for TodoList Id.</param>
     /// <param name="repository">TodoList repository.</param>
-    public static IRuleBuilderOptions<T, string> Validate_TitleUnique<T>(this IRuleBuilder<T, string> rule, Func<T, int> todoListId, IEntityRepository<ITodoList> repository)
+    public static TodoListBaseValidator<T, string> Validate_TitleUnique<T>(this TodoListBaseValidator<T, string> validator, Func<T, int> todoListId, IEntityRepository<ITodoList> repository)
     {
-      return rule
-        .Must((t, title) => BeUniqueTitle<T>(title, todoListId(t), repository)).WithMessage($"The todo with specified {nameof(ITodoList.Title)} already exists.");
+      validator.Rule
+        .Must((t, title) => BeUniqueTitle<T>(title, todoListId(t), repository)).WithMessage($"The {nameof(TodoList)} with specified {nameof(TodoList.Title)} already exists.");
+
+      return validator;
     }
 
     /// <summary>
     /// Add validation rule for length of TodoList description.
     /// </summary>
     /// <typeparam name="T">Type of TodoList-like object for validation.</typeparam>
-    /// <param name="rule">Validation rules collection.</param>
-    public static IRuleBuilderOptions<T, string> Validate_DescriptionLength<T>(this IRuleBuilder<T, string> rule)
+    /// <param name="validator">Validator for TodoList string property.</param>
+    public static TodoListBaseValidator<T, string> Validate_DescriptionLength<T>(this TodoListBaseValidator<T, string> validator)
     {
-      return rule
-        .MaximumLength(MAX_DESCRIPTION_LENGTH).WithMessage($"{nameof(ITodoList.Description)} of todo should not exceed {MAX_DESCRIPTION_LENGTH} characters.");
+      validator.Rule
+        .MaximumLength(TodoListBaseValidator.MAX_DESCRIPTION_LENGTH).WithMessage($"{nameof(TodoList.Description)} of {nameof(TodoList)} should not exceed {TodoListBaseValidator.MAX_DESCRIPTION_LENGTH} characters.");
+
+      return validator;
     }
 
     /// <summary>
     /// Add validation rule that TodoList deadline is after creation date.
     /// </summary>
     /// <typeparam name="T">Type of TodoList-like object for validation.</typeparam>
-    /// <param name="rule">Validation rules collection.</param>
+    /// <param name="validator">Validator for TodoList datetime property.</param>
     /// <param name="createdDate">Getter for TodoList creation date.</param>
-    public static IRuleBuilderOptions<T, DateTime?> Validate_DeadlineAfterCreation<T>(this IRuleBuilder<T, DateTime?> rule, Func<T, DateTime?> createdDate)
+    public static TodoListBaseValidator<T, DateTime?> Validate_DeadlineAfterCreation<T>(this TodoListBaseValidator<T, DateTime?> validator, Func<T, DateTime?> createdDate)
     {
-      return rule
-        .GreaterThan(t => createdDate(t)).WithMessage("Deadline of todo should be after creation date.");
+      validator.Rule
+        .GreaterThan(t => createdDate(t)).WithMessage($"Deadline of {nameof(TodoList)} should be after creation date.");
+
+      return validator;
     }
 
     /// <summary>
     /// Add validation rule that TodoList completion date is after creation date.
     /// </summary>
     /// <typeparam name="T">Type of TodoList-like object for validation.</typeparam>
-    /// <param name="rule">Validation rules collection.</param>
+    /// <param name="validator">Validator for TodoList datetime property.</param>
     /// <param name="createdDate">Getter for TodoList creation date.</param>
-    public static IRuleBuilderOptions<T, DateTime?> Validate_CompletionAfterCreation<T>(this IRuleBuilder<T, DateTime?> rule, Func<T, DateTime?> createdDate)
+    public static TodoListBaseValidator<T, DateTime?> Validate_CompletionAfterCreation<T>(this TodoListBaseValidator<T, DateTime?> validator, Func<T, DateTime?> createdDate)
     {
-      return rule
-        .GreaterThan(t => createdDate(t)).WithMessage("Completion date of todo should be after creation date.");
+      validator.Rule
+        .GreaterThan(t => createdDate(t)).WithMessage($"Completion date of {nameof(TodoList)} should be after creation date.");
+
+      return validator;
     }
 
     /// <summary>
@@ -98,7 +142,5 @@ namespace MicroSungero.Planning.Domain.Entities.Validators
     {
       return !repository.GetAll().Any(todo => todo.Title == title && todo.Id != todoListId);
     }
-
-    #endregion
   }
 }
