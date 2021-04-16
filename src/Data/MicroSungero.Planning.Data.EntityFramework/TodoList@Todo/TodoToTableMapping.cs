@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MicroSungero.Planning.Domain.Entities;
+﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MicroSungero.Kernel.Data.EntityFramework;
-using System.Collections.Generic;
+using MicroSungero.Planning.Domain;
+using MicroSungero.Planning.Domain.Entities;
 using MicroSungero.Planning.Domain.Entities.Validators;
+using MicroSungero.System.Domain;
 
 namespace MicroSungero.Planning.Data.EntityFramework
 {
@@ -38,9 +40,15 @@ namespace MicroSungero.Planning.Data.EntityFramework
 
       builder.Property(t => t.PerformerId);
 
-      builder.Property(t => t.Priority);
+      builder.Property(t => t.Priority)
+        .HasConversion(new EnumerationValueConverter<Priority>());
 
-      builder.OwnsOne(t => t.Tag);
+      //builder.OwnsOne(t => (EntityTag)t.Tag, b =>
+      //{
+      //  b.Property(t => t.Name).IsRequired();
+      //  b.Property(t => t.Color).HasConversion(new EnumerationValueConverter<Color>()).IsRequired();
+      //});
+      builder.Ignore(t => t.Tag);
 
       builder.Property(t => t.TodoListId)
         .IsRequired();

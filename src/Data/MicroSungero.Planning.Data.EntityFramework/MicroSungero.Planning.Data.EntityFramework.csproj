@@ -24,8 +24,17 @@
     <Reference Include="MicroSungero.Kernel.Data.EntityFramework">
       <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="MicroSungero.Kernel.Domain.Entities">
       <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.System.Domain">
+      <HintPath>..\..\..\lib\MicroSungero.System.Domain.dll</HintPath>
     </Reference>
     <Reference Include="MicroSungero.System.Domain.Abstractions">
       <HintPath>..\..\..\lib\MicroSungero.System.Domain.Abstractions.dll</HintPath>
@@ -33,6 +42,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj" />
     <ProjectReference Include="..\..\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj" />
     <ProjectReference Include="..\..\Module\MicroSungero.Planning.Module\MicroSungero.Planning.Module.csproj" />
   </ItemGroup>
