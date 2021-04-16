@@ -27,7 +27,7 @@ namespace MicroSungero.Planning.Domain.Entities
     /// <summary>
     /// Priority.
     /// </summary>
-    ITodoPriority Priority { get; set; }
+    Priority Priority { get; set; }
 
     /// <summary>
     /// User tag.

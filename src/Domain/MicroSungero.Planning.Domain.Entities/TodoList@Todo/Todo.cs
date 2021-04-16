@@ -34,7 +34,7 @@ namespace MicroSungero.Planning.Domain.Entities
 
     public string Note { get; set; }
 
-    public ITodoPriority Priority { get; set; }
+    public Priority Priority { get; set; }
 
     public IEntityTag Tag { get; set; }
 
