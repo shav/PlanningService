@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MicroSungero.WebAPI;
+using MicroSungero.WebAPI.Configuration;
 
 namespace MicroSungero.Planning.WebAPI
 {

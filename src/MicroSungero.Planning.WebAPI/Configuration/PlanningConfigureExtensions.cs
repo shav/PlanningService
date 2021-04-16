@@ -7,6 +7,7 @@ using MicroSungero.Planning.Data;
 using MicroSungero.Planning.Data.EntityFramework;
 using MicroSungero.Planning.Domain.Entities;
 using MicroSungero.WebAPI;
+using MicroSungero.WebAPI.Configuration;
 
 namespace MicroSungero.Planning.WebAPI
 {
