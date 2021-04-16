@@ -24,3 +24,4 @@ log
 .vs
 **/Properties/launchSettings.json
 **/*DotSettings.user
+**/appsettings.Development.json
