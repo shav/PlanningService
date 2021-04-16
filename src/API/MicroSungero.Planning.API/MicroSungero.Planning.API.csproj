@@ -12,4 +12,31 @@
     <OutputPath>..\..\..\bin\</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MicroSungero.Planning.Domain.Abstractions\MicroSungero.Planning.Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Domain\MicroSungero.Planning.Domain.Entities\MicroSungero.Planning.Domain.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MicroSungero.Kernel.API">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.API.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Data.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.System.API">
+      <HintPath>..\..\..\lib\MicroSungero.System.API.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroSungero.System.Domain">
+      <HintPath>..\..\..\lib\MicroSungero.System.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

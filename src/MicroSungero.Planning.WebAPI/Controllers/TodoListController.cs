@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MicroSungero.Kernel.API;
+using MicroSungero.Planning.API.Models;
+using MicroSungero.Planning.API.Queries;
 
 namespace MicroSungero.Planning.WebAPI.Controllers
 {
@@ -36,9 +38,9 @@ namespace MicroSungero.Planning.WebAPI.Controllers
     /// </summary>
     [HttpGet]
     [Route("All")]
-    public async Task<IEnumerable<int>> GetAll()
+    public async Task<IEnumerable<TodoListDto>> GetAll()
     {
-      return new[] { 1, 2, 3 };
+      return await this.queryService.Execute(new GetAllTodoListsQuery());
     }
 
     /// <summary>

@@ -51,7 +51,7 @@ namespace MicroSungero.Planning.Domain.Entities
     DateTime? Deadline { get; set; }
 
     /// <summary>
-    /// Indicates that all items of this TodoList are completed.
+    /// Indicates that todo item is completed.
     /// </summary>
     bool IsCompleted { get; set; }
 
