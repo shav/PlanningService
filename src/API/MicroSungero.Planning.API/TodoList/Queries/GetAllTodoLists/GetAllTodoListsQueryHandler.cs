@@ -15,6 +15,8 @@ namespace MicroSungero.Planning.API.Queries
   /// </summary>
   public class GetAllTodoListsQueryHandler : IQueryHandler<GetAllTodoListsQuery, IEnumerable<TodoListDto>>
   {
+    #region Properties and fields
+
     /// <summary>
     /// Unit-of-work.
     /// </summary>
@@ -30,6 +32,10 @@ namespace MicroSungero.Planning.API.Queries
     /// </summary>
     private readonly IMapper mapper;
 
+    #endregion
+
+    #region Constructors
+
     /// <summary>
     /// Create query handler.
     /// </summary>
@@ -43,17 +49,34 @@ namespace MicroSungero.Planning.API.Queries
       this.mapper = mapper;
     }
 
+    #endregion
+
+    #region Methods
+
+    /// <summary>
+    /// Handle query core logic.
+    /// </summary>
+    /// <param name="query">GetAllTodoLists query.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>All TodoLists collection.</returns>
+    public async Task<IEnumerable<ITodoList>> HandleCore(GetAllTodoListsQuery query, CancellationToken cancellationToken)
+    {
+      using (this.unitOfWork)
+      {
+        return this.repository.GetAll().ToList();
+      }
+    }
+
+    #endregion
+
     #region IQueryHandler
 
     public async Task<IEnumerable<TodoListDto>> Handle(GetAllTodoListsQuery query, CancellationToken cancellationToken)
     {
-      using (this.unitOfWork)
-      {
-        return this.repository.GetAll()
-          .Select(todo => this.mapper.Map<TodoListDto>(todo))
-          .ToList();
-      }
-      return Enumerable.Empty<TodoListDto>();
+      var todoLists = await this.HandleCore(query, cancellationToken);
+      return todoLists
+        .Select(todo => this.mapper.Map<TodoListDto>(todo))
+        .ToList();
     }
 
     #endregion
