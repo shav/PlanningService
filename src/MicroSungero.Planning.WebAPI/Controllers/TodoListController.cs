@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MicroSungero.Kernel.API;
+using MicroSungero.Planning.API.Commands;
 using MicroSungero.Planning.API.Models;
 using MicroSungero.Planning.API.Queries;
 
@@ -59,9 +60,9 @@ namespace MicroSungero.Planning.WebAPI.Controllers
     /// </summary>
     [HttpPost]
     [Route("Create")]
-    public async Task<int> Create()
+    public async Task<TodoListDto> Create(CreateNewTodoListCommand command)
     {
-      return new Random().Next(0, 100);
+      return await this.commandService.Execute(command);
     }
 
     #endregion

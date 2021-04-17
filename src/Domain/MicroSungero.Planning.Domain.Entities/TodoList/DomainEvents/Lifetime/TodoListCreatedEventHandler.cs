@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using MicroSungero.Kernel.Domain.DomainEvents;
 using MicroSungero.Kernel.Domain.Entities;
@@ -27,6 +28,7 @@ namespace MicroSungero.Planning.Domain.Entities.DomainEvents
     protected override async Task HandleEventCore(EntityCreatedEvent<ITodoList> domainEvent, CancellationToken cancellationToken)
     {
       var todoList = domainEvent.Entity;
+      todoList.CreatedDate = DateTime.UtcNow;
     }
   }
 }

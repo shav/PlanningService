@@ -54,7 +54,7 @@ namespace MicroSungero.Planning.API.Queries
     #region Methods
 
     /// <summary>
-    /// Handle query core logic.
+    /// Handling query core logic.
     /// </summary>
     /// <param name="query">GetAllTodoLists query.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
