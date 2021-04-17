@@ -50,9 +50,10 @@ namespace MicroSungero.Planning.WebAPI.Controllers
     /// <param name="id">Id of TodoList.</param>
     [HttpGet]
     [Route("{id}")]
-    public async Task<int> Get(int id)
+    public async Task<TodoListDto> Get(int id)
     {
-      return id;
+      var getTodoListQuery = new GetTodoListQuery() { TodoListId = id };
+      return await this.queryService.Execute(getTodoListQuery);
     }
 
     /// <summary>
