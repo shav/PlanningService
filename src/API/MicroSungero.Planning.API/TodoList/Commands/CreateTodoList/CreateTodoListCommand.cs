@@ -8,7 +8,7 @@ namespace MicroSungero.Planning.API.Commands
   /// <summary>
   /// Command that creates new todo list.
   /// </summary>
-  public class CreateNewTodoListCommand : ICommand<TodoListDto>
+  public class CreateTodoListCommand : ICommand<TodoListDto>
   {
     /// <summary>
     /// Title (optional).

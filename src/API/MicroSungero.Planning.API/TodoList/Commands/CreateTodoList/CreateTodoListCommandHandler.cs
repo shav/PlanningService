@@ -11,7 +11,7 @@ namespace MicroSungero.Planning.API.Commands
   /// <summary>
   /// Command handler to create new TodoList.
   /// </summary>
-  public class CreateNewTodoListCommandHandler : ICommandHandler<CreateNewTodoListCommand, TodoListDto>
+  public class CreateTodoListCommandHandler : ICommandHandler<CreateTodoListCommand, TodoListDto>
   {
     #region Properties and fields
 
@@ -40,7 +40,7 @@ namespace MicroSungero.Planning.API.Commands
     /// <param name="unitOfWork">Unit-of-work.</param>
     /// <param name="repository">TodoList repository.</param>
     /// <param name="mapper">Objects to DTO mapper.</param>
-    public CreateNewTodoListCommandHandler(IUnitOfWorkScope unitOfWork, IEntityRepository<ITodoList> repository, IMapper mapper)
+    public CreateTodoListCommandHandler(IUnitOfWorkScope unitOfWork, IEntityRepository<ITodoList> repository, IMapper mapper)
     {
       this.repository = repository;
       this.mapper = mapper;
@@ -57,7 +57,7 @@ namespace MicroSungero.Planning.API.Commands
     /// <param name="query">CreateNewTodoList command.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>New todo list.</returns>
-    public async Task<ITodoList> HandleCore(CreateNewTodoListCommand command, CancellationToken cancellationToken)
+    public async Task<ITodoList> HandleCore(CreateTodoListCommand command, CancellationToken cancellationToken)
     {
       using (this.unitOfWork)
       {
@@ -78,7 +78,7 @@ namespace MicroSungero.Planning.API.Commands
 
     #region ICommandHandler
 
-    public async Task<TodoListDto> Handle(CreateNewTodoListCommand command, CancellationToken cancellationToken)
+    public async Task<TodoListDto> Handle(CreateTodoListCommand command, CancellationToken cancellationToken)
     {
       var todoList = await this.HandleCore(command, cancellationToken);
       return this.mapper.Map<TodoListDto>(todoList);

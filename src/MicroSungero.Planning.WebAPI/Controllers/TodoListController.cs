@@ -61,7 +61,7 @@ namespace MicroSungero.Planning.WebAPI.Controllers
     /// </summary>
     [HttpPost]
     [Route("Create")]
-    public async Task<TodoListDto> Create(CreateNewTodoListCommand command)
+    public async Task<TodoListDto> Create(CreateTodoListCommand command)
     {
       return await this.commandService.Execute(command);
     }
