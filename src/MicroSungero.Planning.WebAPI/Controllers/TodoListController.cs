@@ -67,6 +67,16 @@ namespace MicroSungero.Planning.WebAPI.Controllers
     }
 
     /// <summary>
+    /// Update existing TodoList.
+    /// </summary>
+    [HttpPost]
+    [Route("Update")]
+    public async Task<TodoListDto> Update(UpdateTodoListCommand command)
+    {
+      return await this.commandService.Execute(command);
+    }
+
+    /// <summary>
     /// Delete TodoList.
     /// </summary>
     /// <param name="id">Id of TodoList.</param>
