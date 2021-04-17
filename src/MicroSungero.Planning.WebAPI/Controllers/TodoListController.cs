@@ -66,6 +66,18 @@ namespace MicroSungero.Planning.WebAPI.Controllers
       return await this.commandService.Execute(command);
     }
 
+    /// <summary>
+    /// Delete TodoList.
+    /// </summary>
+    /// <param name="id">Id of TodoList.</param>
+    [HttpPost]
+    [Route("[action]/{id}")]
+    public async Task Delete(int id)
+    {
+      var deleteTodoListCommand = new DeleteTodoListCommand() { TodoListId = id };
+      await this.commandService.Execute(deleteTodoListCommand);
+    }
+
     #endregion
 
     #region Constructors
