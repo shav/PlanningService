@@ -54,7 +54,7 @@ namespace MicroSungero.Planning.API.Commands
     /// <summary>
     /// Handling command core logic.
     /// </summary>
-    /// <param name="query">CreateNewTodoList command.</param>
+    /// <param name="query">CreateTodoList command.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>New todo list.</returns>
     private async Task<ITodoList> HandleCore(CreateTodoListCommand command, CancellationToken cancellationToken)
@@ -62,16 +62,26 @@ namespace MicroSungero.Planning.API.Commands
       using (this.unitOfWork)
       {
         var todoList = this.repository.Create();
-        todoList.Title = command.Title;
-        todoList.Description = command.Description;
-        todoList.AuthorId = command.AuthorId;
-        todoList.Deadline = command.Deadline;
+        this.Apply(todoList, command);
 
         if (command.NeedSave)
           await unitOfWork.SubmitChanges();
 
         return todoList;
       }
+    }
+
+    /// <summary>
+    /// Apply TodoList properties from command to new instance of TodoList.
+    /// </summary>
+    /// <param name="todoList">New todo list.</param>
+    /// <param name="command">CreateTodoList command.</param>
+    private void Apply(ITodoList todoList, CreateTodoListCommand command)
+    {
+      todoList.Title = command.Title;
+      todoList.Description = command.Description;
+      todoList.AuthorId = command.AuthorId;
+      todoList.Deadline = command.Deadline;
     }
 
     #endregion

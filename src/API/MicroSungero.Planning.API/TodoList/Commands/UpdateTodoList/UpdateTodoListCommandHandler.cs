@@ -62,9 +62,7 @@ namespace MicroSungero.Planning.API.Commands
       using (this.unitOfWork)
       {
         var todoList = this.repository.GetById(command.TodoListId);
-        todoList.Title = command.Title;
-        todoList.Description = command.Description;
-        todoList.Deadline = command.Deadline;
+        this.Apply(todoList, command);
         this.repository.Update(todoList);
 
         if (command.NeedSave)
@@ -72,6 +70,18 @@ namespace MicroSungero.Planning.API.Commands
 
         return todoList;
       }
+    }
+
+    /// <summary>
+    /// Apply changes from command to TodoList instance.
+    /// </summary>
+    /// <param name="todoList">Todo list for updating.</param>
+    /// <param name="command">UpdateTodoList command.</param>
+    private void Apply(ITodoList todoList, UpdateTodoListCommand command)
+    {
+      todoList.Title = command.Title;
+      todoList.Description = command.Description;
+      todoList.Deadline = command.Deadline;
     }
 
     #endregion
