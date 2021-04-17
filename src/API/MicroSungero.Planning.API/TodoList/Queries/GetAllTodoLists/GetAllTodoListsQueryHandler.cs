@@ -52,7 +52,7 @@ namespace MicroSungero.Planning.API.Queries
     /// <param name="query">GetAllTodoLists query.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>All TodoLists collection.</returns>
-    public async Task<IEnumerable<ITodoList>> HandleCore(GetAllTodoListsQuery query, CancellationToken cancellationToken)
+    private async Task<IEnumerable<ITodoList>> HandleCore(GetAllTodoListsQuery query, CancellationToken cancellationToken)
     {
       return this.repository.GetAll().ToList();
     }

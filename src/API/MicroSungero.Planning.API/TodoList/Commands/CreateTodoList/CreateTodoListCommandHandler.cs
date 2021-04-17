@@ -57,7 +57,7 @@ namespace MicroSungero.Planning.API.Commands
     /// <param name="query">CreateNewTodoList command.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>New todo list.</returns>
-    public async Task<ITodoList> HandleCore(CreateTodoListCommand command, CancellationToken cancellationToken)
+    private async Task<ITodoList> HandleCore(CreateTodoListCommand command, CancellationToken cancellationToken)
     {
       using (this.unitOfWork)
       {

@@ -48,7 +48,7 @@ namespace MicroSungero.Planning.API.Commands
     /// </summary>
     /// <param name="query">DeleteTodoList command.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    public async Task<Unit> HandleCore(DeleteTodoListCommand command, CancellationToken cancellationToken)
+    private async Task<Unit> HandleCore(DeleteTodoListCommand command, CancellationToken cancellationToken)
     {
       using (this.unitOfWork)
       {
