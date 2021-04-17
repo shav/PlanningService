@@ -18,11 +18,6 @@ namespace MicroSungero.Planning.API.Queries
     #region Properties and fields
 
     /// <summary>
-    /// Unit-of-work.
-    /// </summary>
-    private readonly IUnitOfWorkScope unitOfWork;
-
-    /// <summary>
     /// TodoList repository.
     /// </summary>
     private readonly IEntityRepository<ITodoList> repository;
@@ -39,12 +34,10 @@ namespace MicroSungero.Planning.API.Queries
     /// <summary>
     /// Create query handler.
     /// </summary>
-    /// <param name="unitOfWork">Unit-of-work.</param>
     /// <param name="repository">TodoList repository.</param>
     /// <param name="mapper">Objects to DTO mapper.</param>
-    public GetAllTodoListsQueryHandler(IUnitOfWorkScope unitOfWork, IEntityRepository<ITodoList> repository, IMapper mapper)
+    public GetAllTodoListsQueryHandler(IEntityRepository<ITodoList> repository, IMapper mapper)
     {
-      this.unitOfWork = unitOfWork;
       this.repository = repository;
       this.mapper = mapper;
     }
@@ -61,10 +54,7 @@ namespace MicroSungero.Planning.API.Queries
     /// <returns>All TodoLists collection.</returns>
     public async Task<IEnumerable<ITodoList>> HandleCore(GetAllTodoListsQuery query, CancellationToken cancellationToken)
     {
-      using (this.unitOfWork)
-      {
-        return this.repository.GetAll().ToList();
-      }
+      return this.repository.GetAll().ToList();
     }
 
     #endregion
