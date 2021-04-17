@@ -29,6 +29,9 @@
     <Reference Include="MicroSungero.Kernel.Data.Abstractions">
       <HintPath>..\..\..\lib\MicroSungero.Kernel.Data.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="MicroSungero.Kernel.Domain">
+      <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="MicroSungero.Kernel.Domain.Abstractions">
       <HintPath>..\..\..\lib\MicroSungero.Kernel.Domain.Abstractions.dll</HintPath>
     </Reference>

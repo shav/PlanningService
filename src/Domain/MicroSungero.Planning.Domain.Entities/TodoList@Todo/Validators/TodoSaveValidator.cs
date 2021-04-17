@@ -34,7 +34,7 @@ namespace MicroSungero.Planning.Domain.Entities.Validators
     /// <typeparam name="TProperty">Typeof property.</typeparam>
     /// <param name="property">Property name.</param>
     /// <returns>Validator for property.</returns>
-    public new TodoBaseValidator<ITodo, TProperty> RuleFor<TProperty>(Expression<Func<ITodo, TProperty>> property)
+    private new TodoBaseValidator<ITodo, TProperty> RuleFor<TProperty>(Expression<Func<ITodo, TProperty>> property)
     {
       return new TodoBaseValidator<ITodo, TProperty>(base.RuleFor(property));
     }
