@@ -42,7 +42,7 @@ namespace MicroSungero.Planning.Domain.Entities
 
     public DateTime? CompletedDate { get; set; }
 
-    public IEnumerable<ITodo> TodoItems => todoItems;
+    public ICollection<ITodo> TodoItems => todoItems;
 
     #endregion
 
@@ -51,7 +51,7 @@ namespace MicroSungero.Planning.Domain.Entities
     /// <summary>
     /// Todo items collection.
     /// </summary>
-    private readonly List<ITodo> todoItems = new List<ITodo>();
+    private List<ITodo> todoItems = new List<ITodo>();
 
     #endregion
   }

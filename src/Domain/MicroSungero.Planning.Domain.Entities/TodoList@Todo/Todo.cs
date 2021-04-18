@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using MicroSungero.Kernel.Domain.Entities;
-using MicroSungero.System.Domain;
 
 namespace MicroSungero.Planning.Domain.Entities
 {
@@ -36,7 +36,7 @@ namespace MicroSungero.Planning.Domain.Entities
 
     public Priority Priority { get; set; }
 
-    public IEntityTag Tag { get; set; }
+    public ICollection<ITodoTag> Tags => this.tags;
 
     public DateTime CreatedDate { get; set; }
 
@@ -58,6 +58,11 @@ namespace MicroSungero.Planning.Domain.Entities
     /// Id of TodoList which contains this todo item.
     /// </summary>
     public int TodoListId { get; private set; }
+
+    /// <summary>
+    /// User tags collection.
+    /// </summary>
+    private List<ITodoTag> tags = new List<ITodoTag>();
 
     #endregion
 

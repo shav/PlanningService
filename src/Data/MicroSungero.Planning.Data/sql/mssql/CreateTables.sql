@@ -2,7 +2,7 @@
 SET QUOTED_IDENTIFIER ON
 GO
 
-/****** TodoList ******/
+/****** Todo lists ******/
 create table dbo.MicroSungero_Planning_TodoList
 (
   [Id] int not null,
@@ -30,7 +30,7 @@ CREATE SEQUENCE [dbo].[MicroSungero_Planning_TodoList_Id]
  CACHE 
 GO
 
-/****** Todo item ******/
+/****** Todo items ******/
 create table dbo.MicroSungero_Planning_Todo
 (
   [Id] int not null,
@@ -44,8 +44,6 @@ create table dbo.MicroSungero_Planning_Todo
   [Deadline] datetime2 null,
   [IsCompleted] bit null,
   [CompletedDate] datetime2 null,
-  [Tag_Name] nvarchar(100) null,
-  [Tag_Color] nvarchar(20) null,
   [TodoListId] int not null,
   PRIMARY KEY CLUSTERED
   (
@@ -59,6 +57,35 @@ REFERENCES [dbo].[MicroSungero_Planning_TodoList] ([Id])
 GO
 
 CREATE SEQUENCE [dbo].[MicroSungero_Planning_Todo_Id] 
+ AS [bigint]
+ START WITH 1
+ INCREMENT BY 10
+ MINVALUE 1
+ MAXVALUE 9223372036854775807
+ CACHE 
+GO
+
+
+/****** Todo tags ******/
+create table dbo.MicroSungero_Planning_TodoTag
+(
+  [Id] int not null,
+  [TypeGuid] uniqueidentifier not null,
+  [Tag_Name] nvarchar(100) null,
+  [Tag_Color] nvarchar(20) null,
+  [TodoId] int not null,
+  PRIMARY KEY CLUSTERED
+  (
+	  [Id] ASC
+  ) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) on [PRIMARY]
+GO
+
+ALTER TABLE [dbo].MicroSungero_Planning_TodoTag  WITH CHECK ADD CONSTRAINT [FK_TodoTag_Todo] FOREIGN KEY([TodoId])
+REFERENCES [dbo].[MicroSungero_Planning_Todo] ([Id])
+GO
+
+CREATE SEQUENCE [dbo].[MicroSungero_Planning_TodoTag_Id] 
  AS [bigint]
  START WITH 1
  INCREMENT BY 10

@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using MicroSungero.Kernel.Domain.Entities;
-using MicroSungero.System.Domain;
 
 namespace MicroSungero.Planning.Domain.Entities
 {
@@ -30,9 +30,9 @@ namespace MicroSungero.Planning.Domain.Entities
     Priority Priority { get; set; }
 
     /// <summary>
-    /// User tag.
+    /// Collection of user tags.
     /// </summary>
-    IEntityTag Tag { get; set; }
+    ICollection<ITodoTag> Tags { get; }
 
     /// <summary>
     /// Creation date.

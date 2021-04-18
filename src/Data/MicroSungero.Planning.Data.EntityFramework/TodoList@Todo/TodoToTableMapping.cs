@@ -5,7 +5,6 @@ using MicroSungero.Kernel.Data.EntityFramework;
 using MicroSungero.Planning.Domain;
 using MicroSungero.Planning.Domain.Entities;
 using MicroSungero.Planning.Domain.Entities.Validators;
-using MicroSungero.System.Domain;
 
 namespace MicroSungero.Planning.Data.EntityFramework
 {
@@ -45,20 +44,13 @@ namespace MicroSungero.Planning.Data.EntityFramework
       var Priority = builder.Property(t => t.Priority)
         .HasConversion(new EnumerationValueConverter<Priority>());
 
-      //builder.OwnsOne(t => (EntityTag)t.Tag, b =>
-      //{
-      //  b.Property(t => t.Name).IsRequired();
-      //  b.Property(t => t.Color).HasConversion(new EnumerationValueConverter<Color>()).IsRequired();
-      //});
-      builder.Ignore(t => t.Tag);
-
       var TodoListId = builder.Property(t => t.TodoListId)
         .IsRequired();
 
       builder
-        .HasOne(p => (TodoList)p.TodoList)
-        .WithMany(b => (IEnumerable<Todo>)b.TodoItems)
-        .HasForeignKey(p => p.TodoListId);
+        .HasOne(t => (TodoList)t.TodoList)
+        .WithMany(t => (IEnumerable<Todo>)t.TodoItems)
+        .HasForeignKey(t => t.TodoListId);
 
       model.Properties.Add(Title);
       model.Properties.Add(Description);

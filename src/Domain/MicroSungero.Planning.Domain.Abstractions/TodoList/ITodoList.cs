@@ -47,6 +47,6 @@ namespace MicroSungero.Planning.Domain.Entities
     /// <summary>
     /// Collection of todo items.
     /// </summary>
-    IEnumerable<ITodo> TodoItems { get; }
+    ICollection<ITodo> TodoItems { get; }
   }
 }
