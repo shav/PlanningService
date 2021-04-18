@@ -37,6 +37,7 @@ create table dbo.MicroSungero_Planning_Todo
   [TypeGuid] uniqueidentifier not null,
   [Title] nvarchar(100) not null,
   [Description] nvarchar(250) null,
+  [Note] nvarchar(250) null,
   [PerformerId] int null,
   [Priority] nvarchar(20) null,
   [CreatedDate] datetime2 not null,

@@ -20,6 +20,11 @@ namespace MicroSungero.Planning.Domain.Entities.Validators
     /// </summary>
     public const int MAX_DESCRIPTION_LENGTH = 250;
 
+    /// <summary>
+    /// Max length of Todo note.
+    /// </summary>
+    public const int MAX_NOTE_LENGTH = 250;
+
     #endregion
   }
 
@@ -81,6 +86,19 @@ namespace MicroSungero.Planning.Domain.Entities.Validators
     {
       validator.Rule
         .MaximumLength(TodoBaseValidator.MAX_DESCRIPTION_LENGTH).WithMessage($"{nameof(Todo.Description)} of {nameof(Todo)} should not exceed {TodoBaseValidator.MAX_DESCRIPTION_LENGTH} characters.");
+
+      return validator;
+    }
+
+    /// <summary>
+    /// Add validation rule for length of Todo note.
+    /// </summary>
+    /// <typeparam name="T">Type of Todo-like object for validation.</typeparam>
+    /// <param name="validator">Validator for Todo item string property.</param>
+    public static TodoBaseValidator<T, string> Validate_NoteLength<T>(this TodoBaseValidator<T, string> validator)
+    {
+      validator.Rule
+        .MaximumLength(TodoBaseValidator.MAX_NOTE_LENGTH).WithMessage($"{nameof(Todo.Note)} of {nameof(Todo)} should not exceed {TodoBaseValidator.MAX_NOTE_LENGTH} characters.");
 
       return validator;
     }

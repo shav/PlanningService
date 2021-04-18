@@ -21,6 +21,9 @@ namespace MicroSungero.Planning.Domain.Entities.Validators
       RuleFor(t => t.Description)
         .Validate_DescriptionLength();
 
+      RuleFor(t => t.Note)
+       .Validate_NoteLength();
+
       RuleFor(t => t.Deadline)
         .Validate_DeadlineAfterCreation(t => t.CreatedDate);
 

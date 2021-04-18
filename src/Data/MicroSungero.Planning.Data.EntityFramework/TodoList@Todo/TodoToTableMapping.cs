@@ -29,6 +29,9 @@ namespace MicroSungero.Planning.Data.EntityFramework
       var Description = builder.Property(t => t.Description)
         .HasMaxLength(TodoBaseValidator.MAX_DESCRIPTION_LENGTH);
 
+      var Note = builder.Property(t => t.Note)
+        .HasMaxLength(TodoBaseValidator.MAX_NOTE_LENGTH);
+
       var CreatedDate = builder.Property(t => t.CreatedDate).IsRequired();
 
       var Deadline = builder.Property(t => t.Deadline);
@@ -59,6 +62,7 @@ namespace MicroSungero.Planning.Data.EntityFramework
 
       model.Properties.Add(Title);
       model.Properties.Add(Description);
+      model.Properties.Add(Note);
       model.Properties.Add(PerformerId);
       model.Properties.Add(Priority);
       model.Properties.Add(CompletedDate);
