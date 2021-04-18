@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MicroSungero.Kernel.Data;
 using MicroSungero.Kernel.Data.EntityFramework;
 using MicroSungero.Planning.Domain;
 using MicroSungero.Planning.Domain.Entities;
@@ -17,30 +18,28 @@ namespace MicroSungero.Planning.Data.EntityFramework
 
     protected override string ModuleName => Planning.Module.Name;
 
-    public override void Configure(EntityTypeBuilder<Todo> builder)
+    protected override EntityTypeTableModel BuildEntityModel(EntityTypeBuilder<Todo> builder)
     {
-      base.Configure(builder);
+      var model = base.BuildEntityModel(builder);
 
-      builder.Property(t => t.Title)
+      var Title = builder.Property(t => t.Title)
         .HasMaxLength(TodoBaseValidator.MAX_TITLE_LENGTH)
         .IsRequired();
 
-      builder.Property(t => t.Description)
+      var Description = builder.Property(t => t.Description)
         .HasMaxLength(TodoBaseValidator.MAX_DESCRIPTION_LENGTH);
 
-      builder.Property(t => t.CreatedDate)
-       .IsRequired();
+      var CreatedDate = builder.Property(t => t.CreatedDate).IsRequired();
 
-      builder.Property(t => t.Deadline);
+      var Deadline = builder.Property(t => t.Deadline);
 
-      builder.Property(t => t.CompletedDate);
+      var CompletedDate = builder.Property(t => t.CompletedDate);
 
-      builder.Property(t => t.IsCompleted)
-        .IsRequired();
+      var IsCompleted = builder.Property(t => t.IsCompleted).IsRequired();
 
-      builder.Property(t => t.PerformerId);
+      var PerformerId = builder.Property(t => t.PerformerId);
 
-      builder.Property(t => t.Priority)
+      var Priority = builder.Property(t => t.Priority)
         .HasConversion(new EnumerationValueConverter<Priority>());
 
       //builder.OwnsOne(t => (EntityTag)t.Tag, b =>
@@ -50,13 +49,37 @@ namespace MicroSungero.Planning.Data.EntityFramework
       //});
       builder.Ignore(t => t.Tag);
 
-      builder.Property(t => t.TodoListId)
+      var TodoListId = builder.Property(t => t.TodoListId)
         .IsRequired();
 
       builder
         .HasOne(p => (TodoList)p.TodoList)
         .WithMany(b => (IEnumerable<Todo>)b.TodoItems)
         .HasForeignKey(p => p.TodoListId);
+
+      model.Properties.Add(Title);
+      model.Properties.Add(Description);
+      model.Properties.Add(PerformerId);
+      model.Properties.Add(Priority);
+      model.Properties.Add(CompletedDate);
+      model.Properties.Add(CreatedDate);
+      model.Properties.Add(Deadline);
+      model.Properties.Add(IsCompleted);
+      model.Properties.Add(TodoListId);
+      return model;
+    }
+
+    #endregion
+
+    #region Constructors
+
+    /// <summary>
+    /// Create object-relational mapping for todo item.
+    /// </summary>
+    /// <param name="connectionSettings">Database connection settings.</param>
+    public TodoToTableMapping(IDatabaseConnectionSettings connectionSettings)
+      : base(connectionSettings)
+    {
     }
 
     #endregion

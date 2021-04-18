@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MicroSungero.Kernel.Data.EntityFramework;
 using MicroSungero.Kernel.Data;
 
@@ -15,7 +14,9 @@ namespace MicroSungero.Planning.Data.EntityFramework
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       base.OnModelCreating(modelBuilder);
-      modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+      
+      modelBuilder.ApplyConfiguration(new TodoListToTableMapping(this.ConnectionSettings));
+      modelBuilder.ApplyConfiguration(new TodoToTableMapping(this.ConnectionSettings));
     }
 
     #endregion

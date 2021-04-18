@@ -2,6 +2,7 @@
 using MicroSungero.Planning.Domain.Entities;
 using MicroSungero.Kernel.Data.EntityFramework;
 using MicroSungero.Planning.Domain.Entities.Validators;
+using MicroSungero.Kernel.Data;
 
 namespace MicroSungero.Planning.Data.EntityFramework
 {
@@ -14,29 +15,51 @@ namespace MicroSungero.Planning.Data.EntityFramework
 
     protected override string ModuleName => Planning.Module.Name;
 
-    public override void Configure(EntityTypeBuilder<TodoList> builder)
+    protected override EntityTypeTableModel BuildEntityModel(EntityTypeBuilder<TodoList> builder)
     {
-      base.Configure(builder);
+      var model = base.BuildEntityModel(builder);
 
-      builder.Property(t => t.Title)
+      var Title = builder.Property(t => t.Title)
         .HasMaxLength(TodoListBaseValidator.MAX_TITLE_LENGTH)
         .IsRequired();
 
-      builder.Property(t => t.Description)
+      var Description = builder.Property(t => t.Description)
         .HasMaxLength(TodoListBaseValidator.MAX_DESCRIPTION_LENGTH);
 
-      builder.Property(t => t.AuthorId)
+      var AuthorId = builder.Property(t => t.AuthorId)
         .IsRequired();
 
-      builder.Property(t => t.CompletedDate);
+      var CompletedDate = builder.Property(t => t.CompletedDate);
 
-      builder.Property(t => t.CreatedDate)
+      var CreatedDate = builder.Property(t => t.CreatedDate)
         .IsRequired();
 
-      builder.Property(t => t.Deadline);
+      var Deadline = builder.Property(t => t.Deadline);
 
-      builder.Property(t => t.IsCompleted)
+      var IsCompleted = builder.Property(t => t.IsCompleted)
         .IsRequired();
+
+      model.Properties.Add(Title);
+      model.Properties.Add(Description);
+      model.Properties.Add(AuthorId);
+      model.Properties.Add(CompletedDate);
+      model.Properties.Add(CreatedDate);
+      model.Properties.Add(Deadline);
+      model.Properties.Add(IsCompleted);
+      return model;
+    }
+
+    #endregion
+
+    #region Constructors
+
+    /// <summary>
+    /// Create object-relational mapping for TodoList.
+    /// </summary>
+    /// <param name="connectionSettings">Database connection settings.</param>
+    public TodoListToTableMapping(IDatabaseConnectionSettings connectionSettings)
+      : base(connectionSettings)
+    {
     }
 
     #endregion

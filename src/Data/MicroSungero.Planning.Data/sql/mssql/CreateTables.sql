@@ -45,7 +45,7 @@ create table dbo.MicroSungero_Planning_Todo
   [CompletedDate] datetime2 null,
   [Tag_Name] nvarchar(100) null,
   [Tag_Color] nvarchar(20) null,
-  [TodoId] int not null,
+  [TodoListId] int not null,
   PRIMARY KEY CLUSTERED
   (
 	[Id] ASC
@@ -53,7 +53,7 @@ create table dbo.MicroSungero_Planning_Todo
 ) on [PRIMARY]
 GO
 
-ALTER TABLE [dbo].MicroSungero_Planning_Todo  WITH CHECK ADD  CONSTRAINT [FK_TodoItem_TodoList] FOREIGN KEY([TodoListId])
+ALTER TABLE [dbo].MicroSungero_Planning_Todo  WITH CHECK ADD CONSTRAINT [FK_TodoItem_TodoList] FOREIGN KEY([TodoListId])
 REFERENCES [dbo].[MicroSungero_Planning_TodoList] ([Id])
 GO
 
