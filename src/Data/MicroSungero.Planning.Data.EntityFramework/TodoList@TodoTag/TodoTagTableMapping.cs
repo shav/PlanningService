@@ -10,9 +10,9 @@ namespace MicroSungero.Planning.Data.EntityFramework
   /// <summary>
   /// Object-relational mapping for user todo tag to database table.
   /// </summary>
-  public class TodoTagToTableMapping : ChildEntityTypeToTableMapping<TodoTag>
+  public class TodoTagTableMapping : ChildEntityTypeTableMapping<TodoTag>
   {
-    #region ChildEntityTypeToTableMapping
+    #region ChildEntityTypeTableMapping
 
     protected override string ModuleName => Planning.Module.Name;
 
@@ -49,7 +49,7 @@ namespace MicroSungero.Planning.Data.EntityFramework
     /// Create object-relational mapping for user todo tag.
     /// </summary>
     /// <param name="connectionSettings">Database connection settings.</param>
-    public TodoTagToTableMapping(IDatabaseConnectionSettings connectionSettings)
+    public TodoTagTableMapping(IDatabaseConnectionSettings connectionSettings)
       : base(connectionSettings)
     {
     }

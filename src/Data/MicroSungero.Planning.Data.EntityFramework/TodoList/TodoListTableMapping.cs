@@ -9,9 +9,9 @@ namespace MicroSungero.Planning.Data.EntityFramework
   /// <summary>
   /// Object-relational mapping for TodoList entity to database table.
   /// </summary>
-  public class TodoListToTableMapping : EntityTypeToTableMapping<TodoList>
+  public class TodoListTableMapping : EntityTypeTableMapping<TodoList>
   {
-    #region EntityTypeToTableMapping
+    #region EntityTypeTableMapping
 
     protected override string ModuleName => Planning.Module.Name;
 
@@ -57,7 +57,7 @@ namespace MicroSungero.Planning.Data.EntityFramework
     /// Create object-relational mapping for TodoList.
     /// </summary>
     /// <param name="connectionSettings">Database connection settings.</param>
-    public TodoListToTableMapping(IDatabaseConnectionSettings connectionSettings)
+    public TodoListTableMapping(IDatabaseConnectionSettings connectionSettings)
       : base(connectionSettings)
     {
     }

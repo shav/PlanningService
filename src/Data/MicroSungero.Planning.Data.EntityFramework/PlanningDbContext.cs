@@ -15,9 +15,9 @@ namespace MicroSungero.Planning.Data.EntityFramework
     {
       base.OnModelCreating(modelBuilder);
       
-      modelBuilder.ApplyConfiguration(new TodoListToTableMapping(this.ConnectionSettings));
-      modelBuilder.ApplyConfiguration(new TodoToTableMapping(this.ConnectionSettings));
-      modelBuilder.ApplyConfiguration(new TodoTagToTableMapping(this.ConnectionSettings));
+      modelBuilder.ApplyConfiguration(new TodoListTableMapping(this.ConnectionSettings));
+      modelBuilder.ApplyConfiguration(new TodoTableMapping(this.ConnectionSettings));
+      modelBuilder.ApplyConfiguration(new TodoTagTableMapping(this.ConnectionSettings));
     }
 
     #endregion
