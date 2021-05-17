@@ -18,7 +18,7 @@ namespace MicroSungero.Planning.WebAPI
 {
   public class Startup
   {
-    public static string ServiceName => Planning.Module.Name;
+    public static readonly string ServiceName = $"{Planning.Module.Name}Service";
 
     public Startup(IConfiguration configuration)
     {
@@ -35,6 +35,7 @@ namespace MicroSungero.Planning.WebAPI
       services.UseSwaggerGenerator(ServiceName);
 
       services.UseMicroSungeroKernel();
+      services.UseLogger(this.Configuration, ServiceName);
       services.UsePlanningModule(this.Configuration);
     }
 
