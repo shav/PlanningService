@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MicroSungero.Kernel.Data.EntityFramework;
 using MicroSungero.Kernel.Data;
+using Microsoft.Extensions.Logging;
 
 namespace MicroSungero.Planning.Data.EntityFramework
 {
@@ -28,9 +29,10 @@ namespace MicroSungero.Planning.Data.EntityFramework
     /// Create database context of Planning module.
     /// </summary>
     /// <param name="options">Options.</param>
+    /// <param name="logFactory">Logger factory.</param>
     /// <param name="connectionSettings">Database connection settings.</param>
-    public PlanningDbContext(DbContextOptions<PlanningDbContext> options, IDatabaseConnectionSettings connectionSettings = null)
-      : base(options, connectionSettings)
+    public PlanningDbContext(DbContextOptions<PlanningDbContext> options, ILoggerFactory logFactory, IDatabaseConnectionSettings connectionSettings = null)
+      : base(options, logFactory, connectionSettings)
     {
     }
 
